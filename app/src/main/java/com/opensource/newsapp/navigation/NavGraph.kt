@@ -12,7 +12,6 @@ import com.opensource.newsapp.feature_posts.presentation.profile.AuthorsProfileS
 import com.opensource.newsapp.feature_posts.presentation.profile.ProfileScreen
 import com.opensource.newsapp.feature_posts.presentation.search.SearchScreen
 import com.opensource.newsapp.feature_posts.presentation.search.composables.DisplaySearchedNews
-import com.manubett.news.feature_posts.presentation.trending.TrendingScreen
 import com.opensource.newsapp.feature_posts.presentation.SharedViewModel
 import com.opensource.newsapp.feature_posts.presentation.bookmark.BookMarkScreen
 
@@ -35,9 +34,6 @@ fun NavGraph(
         }
         composable(Screens.SearchScreen.route) {
             SearchScreen(navHostController, sharedViewModel)
-        }
-        composable(Screens.TrendsScreen.route) {
-            TrendingScreen(navHostController)
         }
         composable(Screens.ProfileScreen.route) {
             ProfileScreen(navHostController)

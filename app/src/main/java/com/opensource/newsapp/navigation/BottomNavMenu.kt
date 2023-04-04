@@ -9,10 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.outlined.Bookmarks
-import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material.icons.outlined.Search
-import androidx.compose.material.icons.outlined.Whatshot
+import androidx.compose.material.icons.outlined.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,9 +22,8 @@ import androidx.navigation.NavController
 
 enum class BottomNavItem(val icon: ImageVector, val route: String) {
     HOME(Icons.Outlined.Home, Screens.HomeScreen.route),
-    TREND(Icons.Outlined.Whatshot, Screens.TrendsScreen.route),
     SEARCH(Icons.Outlined.Search, Screens.SearchScreen.route),
-    BOOKMARK(Icons.Outlined.Bookmarks, Screens.BookMarkScreen.route),
+    BOOKMARK(Icons.Outlined.Bookmark, Screens.BookMarkScreen.route),
     PROFILE(Icons.Default.AccountCircle, Screens.ProfileScreen.route)
 }
 

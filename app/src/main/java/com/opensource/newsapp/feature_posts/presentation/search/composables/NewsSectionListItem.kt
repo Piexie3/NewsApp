@@ -98,7 +98,6 @@ fun NewsSectionListItem(
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top,
         ) {
-
             //news headline
             searchNewsItem.headline?.let {
                 Text(
@@ -109,38 +108,7 @@ fun NewsSectionListItem(
                     overflow = TextOverflow.Ellipsis
                 )
             }
-
-            //published on
-            searchNewsItem.time?.let {
-                Text(
-                    text = "published on $it", modifier = Modifier
-                        .alpha(0.6f)
-                        .padding(start = 4.dp, top = 3.dp)
-                )
-            }
-
-            //source and the author
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 4.dp, top = 2.dp, bottom = 3.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ) {
-
-                //source
-                searchNewsItem.sourcePublication?.let {
-                    Text(text = it, modifier = Modifier.alpha(0.6f))
-                }
-
-                //author
-                searchNewsItem.author.let {
-                    Text(
-                        text = it.toString(), modifier = Modifier
-                            .alpha(0.6f)
-                            .padding(end = 20.dp)
-                    )
-                }
-            }
         }
     }
+    Spacer(modifier = Modifier.height(16.dp))
 }
