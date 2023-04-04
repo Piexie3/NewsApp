@@ -26,10 +26,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.manubett.news.R
+import com.opensource.newsapp.R
 import com.opensource.newsapp.feature_posts.domain.model.NewsDetails
 import com.opensource.newsapp.feature_posts.presentation.SharedViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(
     navController: NavController,
@@ -60,7 +61,9 @@ fun DetailScreen(
                         )
                     }
                 },
-                backgroundColor = Color.Transparent
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color.Transparent
+                )
             )
         }
     ) { paddingValues ->

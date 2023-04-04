@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.manubett.news.R
+import com.opensource.newsapp.R
 import com.opensource.newsapp.feature_posts.domain.model.ImageWithText
 import com.opensource.newsapp.navigation.BottomNavItem
 import com.opensource.newsapp.navigation.BottomNavMenu
@@ -90,15 +90,17 @@ fun ProfileScreen(
                             contentDescription = "Settings"
                         )
                     }
-
                 },
-                backgroundColor = if (isSystemInDarkTheme())
-                    Color.Black.copy(.24f) else
-                    Color.White.copy(.24f),
-                contentColor = if (isSystemInDarkTheme())
-                    Color.White else
-                    Color.Black,
-
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color.Transparent,
+                )
+//                backgroundColor = if (isSystemInDarkTheme())
+//                    Color.Black.copy(.24f) else
+//                    Color.White.copy(.24f),
+//                contentColor = if (isSystemInDarkTheme())
+//                    Color.White else
+//                    Color.Black,
+//
                 )
         },
         bottomBar = {
@@ -119,7 +121,7 @@ fun ProfileScreen(
                     top = PaddingValues.calculateBottomPadding(),
                     bottom = PaddingValues.calculateBottomPadding()
                 )
-                .padding(top= 8.dp),
+                .padding(top = 8.dp),
         ) {
             ProfileSection()
             Spacer(modifier = Modifier.height(8.dp))
@@ -148,27 +150,27 @@ fun ProfileScreen(
                 selectedTabIndex = it
             }
             when (selectedTabIndex){
-                2-> PostSection(
-                    posts = listOf(
-                        painterResource(id = R.drawable.q),
-                        painterResource(id = R.drawable.qq),
-                        painterResource(id = R.drawable.r),
-                        painterResource(id = R.drawable.ss),
-                        painterResource(id = R.drawable.t),
-                        painterResource(id = R.drawable.tt),
-                        painterResource(id = R.drawable.u),
-                        painterResource(id = R.drawable.x),
-                        painterResource(id = R.drawable.xx),
-                        painterResource(id = R.drawable.y),
-                        painterResource(id = R.drawable.yy),
-                        painterResource(id = R.drawable.z),
-                        painterResource(id = R.drawable.kk),
-                        painterResource(id = R.drawable.l),
-                        painterResource(id = R.drawable.ll),
-                        painterResource(id = R.drawable.m),
-                        painterResource(id = R.drawable.mm),
-                    )
-                )
+//                2-> PostSection(
+//                    posts = listOf(
+//                        painterResource(id = R.drawable.q),
+//                        painterResource(id = R.drawable.qq),
+//                        painterResource(id = R.drawable.r),
+//                        painterResource(id = R.drawable.ss),
+//                        painterResource(id = R.drawable.t),
+//                        painterResource(id = R.drawable.tt),
+//                        painterResource(id = R.drawable.u),
+//                        painterResource(id = R.drawable.x),
+//                        painterResource(id = R.drawable.xx),
+//                        painterResource(id = R.drawable.y),
+//                        painterResource(id = R.drawable.yy),
+//                        painterResource(id = R.drawable.z),
+//                        painterResource(id = R.drawable.kk),
+//                        painterResource(id = R.drawable.l),
+//                        painterResource(id = R.drawable.ll),
+//                        painterResource(id = R.drawable.m),
+//                        painterResource(id = R.drawable.mm),
+//                    )
+//                )
             }
         }
     }

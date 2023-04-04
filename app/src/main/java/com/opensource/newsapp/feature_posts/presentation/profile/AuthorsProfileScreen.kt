@@ -1,9 +1,11 @@
 package com.opensource.newsapp.feature_posts.presentation.profile
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -22,9 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.manubett.news.R
+import com.opensource.newsapp.R
 import com.opensource.newsapp.core.composables.ProfileImage
 import com.opensource.newsapp.feature_posts.domain.model.NewsDetails
 import com.opensource.newsapp.feature_posts.presentation.SharedViewModel
@@ -48,7 +48,7 @@ fun AuthorsProfileScreen(
     }
 }
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun AuthorsDetails(
     news: NewsDetails?,
@@ -65,8 +65,6 @@ fun AuthorsDetails(
 
 
             news?.authorsImage?.forEach { image ->
-                news.authorsImage.size.let { it ->
-                    HorizontalPager(count = it) {
                         AsyncImage(
                             model = ImageRequest.Builder(LocalContext.current)
                                 .data(image)
@@ -79,8 +77,8 @@ fun AuthorsDetails(
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxWidth()
                         )
-                    }
-                }
+
+
             }
 
             Box(
